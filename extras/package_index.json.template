@@ -1,0 +1,60 @@
+{
+  "packages":
+  [
+    {
+      "name": "ARM CMSIS",
+      "maintainer": "Arduino",
+      "websiteURL": "http://www.arm.com/products/processors/cortex-m/cortex-microcontroller-software-interface-standard.php",
+      "email": "packages@arduino.cc",
+      "help":
+      {
+        "online": "http://www.keil.com/pack/doc/cmsis/general/html/index.html"
+      },
+      "tools":
+      [
+        {
+          "name": "CMSIS",
+          "version": "%%VERSION%%",
+          "systems":
+          [
+            {
+              "host": "i686-mingw32",
+              "url": "https://github.com/AtmelUniversityFrance/atmel-samd21-xpro-boardmanagermodule/releases/download/v%%VERSION%%/%%FILENAME%%",
+              "archiveFileName": "%%FILENAME%%",
+              "checksum": "SHA-256:%%CHECKSUM%%",
+              "size": "%%SIZE%%"
+            },
+            {
+              "host": "x86_64-apple-darwin",
+              "url": "https://github.com/AtmelUniversityFrance/atmel-samd21-xpro-boardmanagermodule/releases/download/v%%VERSION%%/%%FILENAME%%",
+              "archiveFileName": "%%FILENAME%%",
+              "checksum": "SHA-256:%%CHECKSUM%%",
+              "size": "%%SIZE%%"
+            },
+            {
+              "host": "x86_64-pc-linux-gnu",
+              "url": "https://github.com/AtmelUniversityFrance/atmel-samd21-xpro-boardmanagermodule/releases/download/v%%VERSION%%/%%FILENAME%%",
+              "archiveFileName": "%%FILENAME%%",
+              "checksum": "SHA-256:%%CHECKSUM%%",
+              "size": "%%SIZE%%"
+            },
+            {
+              "host": "i686-pc-linux-gnu",
+              "url": "https://github.com/AtmelUniversityFrance/atmel-samd21-xpro-boardmanagermodule/releases/download/v%%VERSION%%/%%FILENAME%%",
+              "archiveFileName": "%%FILENAME%%",
+              "checksum": "SHA-256:%%CHECKSUM%%",
+              "size": "%%SIZE%%"
+            },
+            {
+              "host": "all",
+              "url": "https://github.com/AtmelUniversityFrance/atmel-samd21-xpro-boardmanagermodule/releases/download/v%%VERSION%%/%%FILENAME%%",
+              "archiveFileName": "%%FILENAME%%",
+              "checksum": "SHA-256:%%CHECKSUM%%",
+              "size": "%%SIZE%%"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
