@@ -1,0 +1,3 @@
+[submodule "ARM_CMSIS"]
+	path = module
+	url = git@github.com:ARM-software/CMSIS.git
