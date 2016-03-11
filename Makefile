@@ -24,7 +24,8 @@ SHELL = /bin/sh
 
 ROOT_PATH := .
 
-PACKAGE_NAME := $(basename $(notdir $(CURDIR)))
+#PACKAGE_NAME := $(basename $(notdir $(CURDIR)))
+PACKAGE_NAME := "CMSIS"
 PACKAGE_VERSION := 4.5.0
 
 # -----------------------------------------------------------------------------
