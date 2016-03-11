@@ -48,7 +48,17 @@ endif
 all: clean print_info
 	@echo ----------------------------------------------------------
 	@echo "Packaging module."
-	tar --transform "s|module|$(PACKAGE_NAME)-$(PACKAGE_VERSION)|g" --exclude=.gitattributes --exclude=.travis.yml --exclude-vcs -cjf "$(PACKAGE_NAME)-$(PACKAGE_VERSION).tar.bz2" "$(PACKAGE_FOLDER)"
+	tar --transform "s|module|$(PACKAGE_NAME)-$(PACKAGE_VERSION)|g" \
+		--exclude=./.gitattributes \
+		--exclude=./.travis.yml \
+		--exclude=CMSIS/index.html \
+		--exclude=CMSIS/Documentation \
+		--exclude=CMSIS/Pack \
+		--exclude=CMSIS/Utilities \
+		--exclude=CMSIS/DSP_Lib/Examples \
+		--exclude=Device/ARM/Documents \
+		--exclude-vcs \
+		-cjf "$(PACKAGE_NAME)-$(PACKAGE_VERSION).tar.bz2" "$(PACKAGE_FOLDER)"
 	$(MAKE) --no-builtin-rules postpackaging -C .
 	@echo ----------------------------------------------------------
 
