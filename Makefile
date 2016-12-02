@@ -57,6 +57,7 @@ all: clean print_info
 		--exclude=CMSIS/Utilities \
 		--exclude=CMSIS/DSP_Lib/Examples \
 		--exclude=Device/ARM/Documents \
+		--exclude=.git \
 		-cjf "$(PACKAGE_NAME)-$(PACKAGE_VERSION).tar.bz2" "$(PACKAGE_FOLDER)"
 	$(MAKE) --no-builtin-rules postpackaging -C .
 	@echo ----------------------------------------------------------
