@@ -30,7 +30,7 @@ PACKAGE_VERSION := 4.5.0
 
 # -----------------------------------------------------------------------------
 # packaging specific
-PACKAGE_FOLDER := module
+PACKAGE_FOLDER := CMSIS
 
 ifeq (postpackaging,$(findstring $(MAKECMDGOALS),postpackaging))
   PACKAGE_FILENAME=$(PACKAGE_NAME)-$(PACKAGE_VERSION).tar.bz2
@@ -49,8 +49,7 @@ endif
 all: clean print_info
 	@echo ----------------------------------------------------------
 	@echo "Packaging module."
-	tar --transform "s|module|$(PACKAGE_NAME)-$(PACKAGE_VERSION)|g" \
-		--exclude=./.gitattributes \
+	tar --exclude=./.gitattributes \
 		--exclude=./.travis.yml \
 		--exclude=CMSIS/index.html \
 		--exclude=CMSIS/Documentation \
@@ -58,7 +57,6 @@ all: clean print_info
 		--exclude=CMSIS/Utilities \
 		--exclude=CMSIS/DSP_Lib/Examples \
 		--exclude=Device/ARM/Documents \
-		--exclude-vcs \
 		-cjf "$(PACKAGE_NAME)-$(PACKAGE_VERSION).tar.bz2" "$(PACKAGE_FOLDER)"
 	$(MAKE) --no-builtin-rules postpackaging -C .
 	@echo ----------------------------------------------------------
