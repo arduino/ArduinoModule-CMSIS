@@ -26,11 +26,11 @@ ROOT_PATH := .
 
 #PACKAGE_NAME := $(basename $(notdir $(CURDIR)))
 PACKAGE_NAME := "CMSIS"
-PACKAGE_VERSION := 4.5.0
+PACKAGE_VERSION := 5.5.0
 
 # -----------------------------------------------------------------------------
 # packaging specific
-PACKAGE_FOLDER := CMSIS
+PACKAGE_FOLDER := CMSIS_5
 
 ifeq (postpackaging,$(findstring $(MAKECMDGOALS),postpackaging))
   PACKAGE_FILENAME=$(PACKAGE_NAME)-$(PACKAGE_VERSION).tar.bz2
@@ -51,11 +51,14 @@ all: clean print_info
 	@echo "Packaging module."
 	tar --exclude=./.gitattributes \
 		--exclude=./.travis.yml \
+		--exclude=docs \
 		--exclude=CMSIS/index.html \
 		--exclude=CMSIS/Documentation \
+		--exclude=CMSIS/DoxyGen \
+		--exclude=CMSIS/NN/Examples \
 		--exclude=CMSIS/Pack \
 		--exclude=CMSIS/Utilities \
-		--exclude=CMSIS/DSP_Lib/Examples \
+		--exclude=CMSIS/DSP/Examples \
 		--exclude=Device/ARM/Documents \
 		--exclude=.git \
 		-cjf "$(PACKAGE_NAME)-$(PACKAGE_VERSION).tar.bz2" "$(PACKAGE_FOLDER)"
